@@ -1,6 +1,8 @@
 Double Ratchet Algorithm
 ========================
 
+[![CircleCI](https://circleci.com/gh/adjoint-io/double-ratchet/tree/master.svg?style=svg)](https://circleci.com/gh/adjoint-io/double-ratchet/tree/master)
+
 An implementation of Open Whisper System's Double Ratchet Algorithm in Haskell.
 
 The Double Ratchet algorithm is used by two parties to exchange encrypted
