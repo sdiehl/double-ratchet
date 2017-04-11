@@ -1,0 +1,128 @@
+name:                ratchet
+version:             0.1
+synopsis:            Double Ratchet Algorithm
+license:             Apache
+license-file:        LICENSE
+author:              Adjoint Inc.
+maintainer:          info@adjoint.io
+copyright:           2017 Adjoint Inc
+Category:            Cryptography
+build-type:          Simple
+cabal-version:       >=1.10
+
+description:
+    An implementation of Open Whisper System's Double Ratchet Algorithm in Haskell
+
+Source-Repository head
+    Type: git
+    Location: git@github.com: adjoint-io/double-ratchet
+
+library
+  exposed-modules:     
+    Ratchet
+
+  other-modules:
+    Ratchet.Types, Ratchet.Defaults
+
+  build-depends:      
+    base                 >= 4.6    && <5.0,
+    transformers         >= 0.4    && <0.6,
+    unordered-containers >= 0.2    && <0.3,
+    protolude            >= 0.1.10 && <0.2,
+    memory               >= 0.14   && <0.15,
+    text                 >= 1.2    && <1.3,
+    cereal               >= 0.5    && <0.6,
+    bytestring           >= 0.10   && <0.11,
+    cryptonite           >= 0.20   && <0.30,
+    mtl                  >= 2.2    && <2.3,
+    either               >= 4.4    && <4.5
+
+  default-language:   Haskell2010
+
+  default-extensions:
+     LambdaCase
+     RecordWildCards
+     OverloadedStrings
+     NoImplicitPrelude
+     FlexibleInstances
+
+  hs-source-dirs:     src
+  ghc-options:
+     -fwarn-tabs
+     -fwarn-incomplete-patterns
+     -fwarn-incomplete-record-updates
+     -fwarn-redundant-constraints
+     -fwarn-implicit-prelude
+     -fwarn-overflowed-literals
+     -fwarn-orphans
+     -fwarn-identities
+     -fwarn-dodgy-exports
+     -fwarn-dodgy-imports
+     -fwarn-duplicate-exports
+     -fwarn-overlapping-patterns
+     -fwarn-missing-fields
+     -fwarn-missing-methods
+     -fwarn-missing-signatures
+     -fwarn-noncanonical-monad-instances
+     -fwarn-unused-pattern-binds
+     -fwarn-unused-type-patterns
+     -fwarn-unrecognised-pragmas
+     -fwarn-wrong-do-bind
+     -fno-warn-name-shadowing
+     -fno-warn-unused-binds
+     -fno-warn-unused-matches
+     -fno-warn-unused-do-bind
+
+test-suite ratchet-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base >= 4.7 && < 5
+    , ratchet
+    , protolude
+    , unordered-containers
+    , text
+    , bytestring
+    , mtl
+    , cryptonite
+    , memory
+    , protolude
+    , QuickCheck
+    , tasty
+    , tasty-quickcheck
+    , quickcheck-instances
+  default-language: Haskell2010
+  default-extensions:
+     LambdaCase
+     RecordWildCards
+     OverloadedStrings
+     NoImplicitPrelude
+     FlexibleInstances
+
+  ghc-options:
+     -fwarn-tabs
+     -fwarn-incomplete-patterns
+     -fwarn-incomplete-record-updates
+     -fwarn-redundant-constraints
+     -fwarn-implicit-prelude
+     -fwarn-overflowed-literals
+     -fwarn-orphans
+     -fwarn-identities
+     -fwarn-dodgy-exports
+     -fwarn-dodgy-imports
+     -fwarn-duplicate-exports
+     -fwarn-overlapping-patterns
+     -fwarn-missing-fields
+     -fwarn-missing-methods
+     -fwarn-missing-signatures
+     -fwarn-noncanonical-monad-instances
+     -fwarn-unused-pattern-binds
+     -fwarn-unused-type-patterns
+     -fwarn-unrecognised-pragmas
+     -fwarn-wrong-do-bind
+     -fno-warn-name-shadowing
+     -fno-warn-unused-binds
+     -fno-warn-unused-matches
+     -fno-warn-unused-do-bind

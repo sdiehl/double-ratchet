@@ -1,0 +1,5 @@
+*.sw[pon]
+*.hi
+*.o
+.stack-work
+Example
