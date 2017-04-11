@@ -9,7 +9,10 @@ The Double Ratchet algorithm is used by two parties to exchange encrypted
 messages based on a shared secret key. Typically the parties will use some key
 agreement protocol (such as X3DH) to agree on the shared secret key.  Following
 this, the parties will use the Double Ratchet to send and receive encrypted
-messages.
+messages. This gives the cryptosystem the property of **perfect forward secrecy** 
+in which compromise of long-term keys does not compromise past session keys. 
+Forward secrecy protects past sessions against future compromises of secret keys 
+or passwords.
 
 The parties derive new keys for every Double Ratchet message so that earlier
 keys cannot be calculated from later ones. The parties also send Diffie-Hellman
