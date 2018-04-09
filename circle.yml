@@ -1,17 +1,23 @@
 dependencies:
   cache_directories:
     - "~/.stack"
-    - "/home/ubuntu/ratchet/.stack-work"
+    - "/home/ubuntu/double-ratchet/.stack-work"
   pre:
-    - wget https://github.com/commercialhaskell/stack/releases/download/v1.4.0/stack-1.4.0-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
+    - sudo apt-get install libleveldb-dev leveldb-doc
+    - wget https://github.com/commercialhaskell/stack/releases/download/v1.6.5/stack-1.6.5-linux-x86_64.tar.gz -O /tmp/stack.tar.gz
     - tar -zxvf /tmp/stack.tar.gz -C /tmp
     - sudo mv /tmp/stack-**/stack /usr/bin/stack
     - sudo apt-get update -q
 
   override:
-    - stack setup --resolver lts-8.5 --no-docker
+    - stack upgrade
+    - stack setup --resolver lts-11.0 --no-docker
     - stack build --fast --no-docker
 
 test:
+  cache_directories:
+    - "~/.stack"
+    - ".stack-work"
+    - "/home/ubuntu/double-ratchet/.stack-work"
   override:
     - stack test --no-docker
