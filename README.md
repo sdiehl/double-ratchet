@@ -1,6 +1,8 @@
 <p align="center">
-  <a href="http://www.adjoint.io"><img src="https://www.adjoint.io/assets/logos/logo-small.png" width="250"/></a>
+  <a href="http://www.adjoint.io"><img src="https://www.adjoint.io/assets/img/adjoint-logo@2x.png" width="250"/></a>
 </p>
+
+[![CircleCI](http://circleci.com/gh/adjoint-io/double-ratchet.svg?style=shield)](https://circleci.com/gh/adjoint-io/bulletproofs)
 
 Double Ratchet Algorithm
 ========================
